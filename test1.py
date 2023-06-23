@@ -1,8 +1,6 @@
 from __future__ import print_function
 import sane
-import numpy
 
-from PIL import Image
 
 sane.init()
 devices = sane.get_devices(localOnly=False)
@@ -50,6 +48,6 @@ i = 0
 while dev.multi_scan():
     dev.start()
     im = dev.snap()
-    im.save('test_pil_'+str(i)+'.png')
+    im.save('test_pil_'+'err2'+'.png')
     print(width,height)
     i +=  1
