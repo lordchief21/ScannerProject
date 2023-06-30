@@ -6,109 +6,133 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>797</width>
+    <height>476</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(33, 150, 243);</string>
+   <string notr="true">background-color: #ffffff;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="menu_bar" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
-      <width>771</width>
-      <height>80</height>
+      <y>20</y>
+      <width>171</width>
+      <height>381</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:#929292;</string>
+    <property name="autoFillBackground">
+     <bool>false</bool>
     </property>
-    <widget class="QPushButton" name="startScan">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>121</width>
-       <height>34</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 8px;
-background-color: #2196f3;
-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string>Start new scan</string>
-     </property>
-    </widget>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(53, 79, 163, 0.5);
+border-radius: 10px</string>
+    </property>
     <widget class="QPushButton" name="continueScan">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>20</y>
-       <width>141</width>
-       <height>34</height>
+       <x>10</x>
+       <y>150</y>
+       <width>151</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">border-radius: 8px;
-background-color: #2196f3;
+background-color: None;
+font: 75 10pt &quot;KacstOne&quot;;
 color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
-      <string>start new sub-batch</string>
+      <string>Start New Batch</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="continueScan_2">
+    <widget class="QPushButton" name="startScan">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>20</y>
+       <x>10</x>
+       <y>190</y>
        <width>151</width>
-       <height>34</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">border-radius: 8px;
-background-color: #2196f3;
+background-color: None;
+font: 75 10pt &quot;KacstOne&quot;;
 color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
-      <string>Close and send batch</string>
+      <string>Continue current Batch</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QTableView" name="error_table">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>261</width>
-      <height>401</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255)</string>
-    </property>
-   </widget>
-   <widget class="QTableView" name="completed_table">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>110</y>
-      <width>261</width>
-      <height>401</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255)</string>
-    </property>
+    <widget class="QPushButton" name="startScan_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 8px;
+background-color: None;
+font: 75 10pt &quot;KacstOne&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Close and Send Batch</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>10</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:None;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="pixmap">
+      <pixmap>Logo/Logo.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+     <property name="indent">
+      <number>-2</number>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

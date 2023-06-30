@@ -12,6 +12,5 @@ def qr_reader(image):
             print(qr_information)
 
 img1 = 'test_pil_0.png'
-img2 = 'test_pil_err2.png'
 
 qr_reader(img1)
