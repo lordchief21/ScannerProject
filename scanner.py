@@ -34,7 +34,7 @@ class Scanner:
         self.device.get_parameters()
     
     def start_scanning(self):
-        i = 0
+        i = 
         dev = self.device
         while dev.multi_scan():
             dev.start()
