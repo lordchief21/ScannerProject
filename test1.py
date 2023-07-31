@@ -2,6 +2,8 @@ from __future__ import print_function
 import sane
 
 
+        
+
 sane.init()
 devices = sane.get_devices(localOnly=False)
 print(devices)
