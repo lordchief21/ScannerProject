@@ -1,6 +1,11 @@
 import cv2
 from pyzbar.pyzbar import decode
 
+class EmptyList(Exception):
+    def __init__(self, message = "Error al leer el código QR"):
+        self.message = message
+        super().__init__(self.message)
+
 class QrReader:
     def __init__(self,qr_name):
         self.qr_name = qr_name
@@ -9,7 +14,7 @@ class QrReader:
         image_reader = cv2.imread(self.qr_name)
         qr_decode = decode(image_reader)
         if len(qr_decode) == 0:
-            print('Error al leer el código QR')
+            raise EmptyList()
         else:
             for code in qr_decode:
                 qr_information = code.data.decode('utf-8')

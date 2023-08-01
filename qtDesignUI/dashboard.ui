@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>797</width>
-    <height>476</height>
+    <width>804</width>
+    <height>666</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #ffffff;</string>
+   <string notr="true">background-color: #21253f;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="menu_bar" native="true">
@@ -22,22 +22,22 @@
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>171</width>
-      <height>381</height>
+      <width>201</width>
+      <height>581</height>
      </rect>
     </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(53, 79, 163, 0.5);
+     <string notr="true">background-color: rgba(255, 255, 255,0.8);
 border-radius: 10px</string>
     </property>
-    <widget class="QPushButton" name="continueScan">
+    <widget class="QPushButton" name="continue_scan">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>150</y>
+       <x>20</x>
+       <y>230</y>
        <width>151</width>
        <height>20</height>
       </rect>
@@ -46,7 +46,7 @@ border-radius: 10px</string>
       <string notr="true">border-radius: 8px;
 background-color: None;
 font: 75 10pt &quot;KacstOne&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>Start New Batch</string>
@@ -61,11 +61,11 @@ color: rgb(255, 255, 255);</string>
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="startScan">
+    <widget class="QPushButton" name="start_scan">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>190</y>
+       <x>20</x>
+       <y>290</y>
        <width>151</width>
        <height>31</height>
       </rect>
@@ -74,17 +74,17 @@ color: rgb(255, 255, 255);</string>
       <string notr="true">border-radius: 8px;
 background-color: None;
 font: 75 10pt &quot;KacstOne&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>Continue current Batch</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="startScan_2">
+    <widget class="QPushButton" name="send_scan">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>240</y>
+       <x>20</x>
+       <y>360</y>
        <width>151</width>
        <height>31</height>
       </rect>
@@ -93,44 +93,184 @@ color: rgb(255, 255, 255);</string>
       <string notr="true">border-radius: 8px;
 background-color: None;
 font: 75 10pt &quot;KacstOne&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>Close and Send Batch</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
-     <property name="enabled">
-      <bool>true</bool>
+   </widget>
+   <widget class="QTableWidget" name="completed_scan">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>150</y>
+      <width>201</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 15px</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="autoScrollMargin">
+     <number>18</number>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
+     <number>36</number>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>36</number>
+    </attribute>
+    <attribute name="verticalHeaderHighlightSections">
+     <bool>true</bool>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Batch</string>
      </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Completed</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QTableWidget" name="error_scan">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>150</y>
+      <width>201</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 15px</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>Batch</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Quarantine</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QWidget" name="Count" native="true">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>30</y>
+      <width>161</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0.525, y1:0.653864, x2:1, y2:1, stop:0.326829 rgba(117, 200, 28, 247), stop:1 rgba(255, 255, 255, 255));
+border-radius: 10px;</string>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>10</y>
-       <width>81</width>
-       <height>81</height>
+       <x>0</x>
+       <y>0</y>
+       <width>141</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:None;</string>
+      <string notr="true">background-color: rgba(53, 79, 163, 0);
+Color:rgb(255, 255, 255);
+border:none;
+font: 75 16pt &quot;Noto Sans&quot;;</string>
      </property>
-     <property name="text">
-      <string/>
+     <property name="plainText">
+      <string>Completed</string>
      </property>
-     <property name="textFormat">
-      <enum>Qt::PlainText</enum>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Errors" native="true">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>30</y>
+      <width>161</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgba(53, 79, 163, 0.8);
+border-radius: 10px;</string>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
      </property>
-     <property name="pixmap">
-      <pixmap>Logo/Logo.png</pixmap>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(53, 79, 163, 0);
+Color:rgb(255, 255, 255);
+border:none;
+font: 75 16pt &quot;Noto Sans&quot;;</string>
      </property>
-     <property name="scaledContents">
-      <bool>true</bool>
+     <property name="plainText">
+      <string>Count</string>
      </property>
-     <property name="wordWrap">
-      <bool>false</bool>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Completed" native="true">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>30</y>
+      <width>161</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:qlineargradient(spread:pad, x1:0.525, y1:0.654, x2:1, y2:1, stop:0.195122 rgba(255, 21, 0, 211), stop:1 rgba(255, 255, 255, 255));
+border-radius: 10px;</string>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
      </property>
-     <property name="indent">
-      <number>-2</number>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(53, 79, 163, 0);
+Color:rgb(255, 255, 255);
+border:none;
+font: 75 16pt &quot;Noto Sans&quot;;</string>
+     </property>
+     <property name="plainText">
+      <string>Errors</string>
      </property>
     </widget>
    </widget>
