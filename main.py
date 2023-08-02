@@ -1,9 +1,14 @@
 from scanner import *
+from login import *
 
 def main():
-    fujitsu = Scanner()
-    fujitsu.confg_scanner()
-    fujitsu.start_scanning()
+    login = Login()
+    login.create_user()
+    if login.login_user():
+        fujitsu = Scanner()
+        fujitsu.confg_scanner()
+        fujitsu.start_scanning()
+    else: print("Usuario invalido")
 
 
 

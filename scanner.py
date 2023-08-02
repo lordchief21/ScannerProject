@@ -32,15 +32,30 @@ class Scanner:
         except:
             print('Problems during setting params ')
         self.device.get_parameters()
-    
+
     def start_scanning(self):
         i = 0
         dev = self.device
-        while dev.multi_scan():
+        
+        def scanning():
             dev.start()
             im = dev.snap()
             route = 'test_pil_'+str(i)+'.png'
             im.save(route)
             qr_reader = QrReader(route)
             qr_reader.read()
-            i +=  1
+        
+        while dev.multi_scan():
+            try:
+               scanning()
+               i += 1
+            except Exception as err:
+                print(err)
+                dev.cancel()
+                choice = input("Desea continuar?")
+                if choice == "yes":
+                    scanning()
+                    i += 1
+                else: break
+            finally:
+                print("proceso finalizado")

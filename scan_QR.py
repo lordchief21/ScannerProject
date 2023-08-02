@@ -35,3 +35,4 @@ class QrReader:
 # img1 = 'test_pil_0.png'
 
 # qr_reader(img1)
+
