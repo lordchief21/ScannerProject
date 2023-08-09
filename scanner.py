@@ -1,6 +1,6 @@
 from __future__ import print_function
 import sane
-from scan_QR import QrReader
+from scan_QR import QrReader, EmptyList
 
 def devices():
     sane.init()
@@ -50,12 +50,18 @@ class Scanner:
                scanning()
                i += 1
             except Exception as err:
-                print(err)
                 dev.cancel()
-                choice = input("Desea continuar?")
-                if choice == "yes":
-                    scanning()
-                    i += 1
+                if str(err) == EmptyList().message:
+                    print(err)
+                    choice = input("Desea continuar?")
+                    if choice == "yes":
+                        continue
+                    else: break
+                elif str(err) == 'Document feeder out of documents':
+                    print(err)
+                    choice = input("Desea continuar?")
+                    if choice == "yes":
+                        continue
+                    else: break
                 else: break
-            finally:
-                print("proceso finalizado")
+            
